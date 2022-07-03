@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def max_integer(my_list=[]):
-    if my_list == []:
+    if my_list:
+        my_list.sort()
+        return (my_list[-1])
+    else:
         return None
-    max_num = 0
-    for number in my_list:
-        if number > max_num:
-            max_num = number
-    return max_num
