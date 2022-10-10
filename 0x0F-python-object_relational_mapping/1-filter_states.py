@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-python script to list all states that starts with N from a database
+python script to list all states that starts with N
+from a database
 """
 
 import MySQLdb
@@ -13,6 +14,7 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states WHERE name LIKE 'N' ORDER BY id ASC")
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cur.close()
     db.close()
