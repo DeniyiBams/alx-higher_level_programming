@@ -16,9 +16,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    new_state = State("Louisiana")
+    new_state = State(name="Louisiana")
     session.add(new_state)
-    session.commit()
     for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
+    session.commit()
     session.close()
