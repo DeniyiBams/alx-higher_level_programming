@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-lists all City objects from a database
+creates the state California with its city San Francisco
 """
 
 
